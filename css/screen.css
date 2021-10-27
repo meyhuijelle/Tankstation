@@ -32,6 +32,8 @@ img{
 }
 
 .o-container{
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 
@@ -97,4 +99,10 @@ img{
         height: 500px;
         width: 500px;
     }
+
+    .o-container{
+        max-width: 700px;
+    }
 }
+
+
