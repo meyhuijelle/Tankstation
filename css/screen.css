@@ -75,4 +75,35 @@ img{
     }
 }
 
+/* rond hier beginnen werken met een hamburger menu */
+
+@media (max-width:600px){
+    .c-map{
+        height: 400px;
+        width: 400px;
+    }
+}
+
+@media (max-width:400px){
+    .c-map{
+        height: 300px;
+        width: 275px;
+    }
+}
+
+@media (max-width:350px){
+    .c-map{
+        height: 300px;
+        width: 225px;
+    }
+}
+
+@media (max-width:325px){
+    .c-map{
+        height: 300px;
+        width: 200px;
+    }
+}
+
+
 
