@@ -231,6 +231,10 @@ input::placeholder {
 \*------------------------------------*/
 
 
+.c-hamburgerMenu{
+    display: none;
+}
+
 .c-map{
     height: 600px;
     width: 600px;
@@ -323,6 +327,10 @@ input::placeholder {
 
     .c-nav{
         display: none;
+    }
+
+    .c-hamburgerMenu{
+        display: block;
     }
 }
 
