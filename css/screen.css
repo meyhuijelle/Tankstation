@@ -206,6 +206,7 @@ input::placeholder {
     color: var(--global-color-neutral-x-light);
 }
 
+
 /* u{
     color: var(--main-color);
 } */
@@ -224,7 +225,28 @@ input::placeholder {
     margin-right: calc(var(--global-baseline)*2);
 }
 
-
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+  
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+  
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+  
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+  
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+  }
 
 /*------------------------------------*\
 #COMPONENTS
@@ -292,6 +314,15 @@ input::placeholder {
     text-decoration: none;
     color: #241c15;
     display: block;
+  }
+
+.c-nav-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    width: 24px;
+    height: 24px;
   }
 /*------------------------------------*\
 #UTILITIES
