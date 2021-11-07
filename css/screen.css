@@ -286,7 +286,6 @@ aside{
     pointer-events: none;
     transform: TranslateX(100%);
     transition: transform 0.25s ease;
-    
   }
 
   .c-mobile-nav__bg {
@@ -306,6 +305,7 @@ aside{
     height: 100vh;
     width: 100vw;
     background-color: #fff;
+    /* border: 1px solid gray; */
   }
 
   .c-mobile-nav__header {
@@ -495,6 +495,11 @@ transform: TranslateX(50%);
         pointer-events: auto;
         transform: TranslateX(60%);
         }
+
+    .c-nav__item{
+        margin-bottom: 16px;
+        
+    }
   }
   
 
@@ -524,8 +529,12 @@ transform: TranslateX(50%);
 
     .has-mobile-nav .c-mobile-nav {
         pointer-events: auto;
-        transform: TranslateX(55%);
+        transform: TranslateX(60%);
         }
+    
+    .c-nav__link{
+        font-size:24px;
+    }
 }
 
 /* rond hier beginnen werken met een hamburger menu */
@@ -539,7 +548,7 @@ transform: TranslateX(50%);
 
     .has-mobile-nav .c-mobile-nav {
         pointer-events: auto;
-        transform: TranslateX(50%);
+        transform: TranslateX(60%);
         }
 
 
@@ -553,7 +562,7 @@ transform: TranslateX(50%);
 
     .has-mobile-nav .c-mobile-nav {
         pointer-events: auto;
-        transform: TranslateX(45%);
+        transform: TranslateX(50%);
         }
 
    
@@ -563,6 +572,10 @@ transform: TranslateX(50%);
     .c-map{
         height: 300px;
         width: 275px;
+    }
+
+    .c-nav__link{
+        font-size: 24px;
     }
 
 
@@ -578,6 +591,15 @@ transform: TranslateX(50%);
         max-width: 150px;
         height: 75px;
     }
+
+    .c-nav__link{
+        font-size: 16px;
+    }
+    .c-nav__item{
+        margin-bottom: 0px;
+
+    }
+
 }
 
 @media (max-width:325px){
