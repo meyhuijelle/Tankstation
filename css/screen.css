@@ -206,6 +206,10 @@ input::placeholder {
     color: var(--global-color-neutral-x-light);
 }
 
+aside{
+    margin-right: -50px;
+}
+
 
 /* u{
     color: var(--main-color);
@@ -222,7 +226,8 @@ input::placeholder {
 .o-list{
     list-style: none;
     padding: 0;
-    margin-right: calc(var(--global-baseline)*2);
+    /* margin-right: calc(var(--global-baseline)*2); */
+    
 }
 
 .o-button-reset {
@@ -252,6 +257,11 @@ input::placeholder {
 #COMPONENTS
 \*------------------------------------*/
 
+.c-page {
+    position: relative;
+    will-change: transform;
+    transition: transform 0.25s ease;
+  }
 
 .c-hamburgerMenu{
     display: none;
@@ -267,6 +277,49 @@ input::placeholder {
     margin-top: 72px;
 }
 
+.c-mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    pointer-events: none;
+    transform: TranslateX(100%);
+    transition: transform 0.25s ease;
+    
+  }
+
+  .c-mobile-nav__bg {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #202024;
+    transition: opacity 0.25s ease;
+  }
+
+  .c-mobile-nav__body {
+    position: relative;
+    padding: 24px;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+  }
+
+  .c-mobile-nav__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  /* @media (min-width: 768px) {
+    .c-mobile-nav__body {
+      padding: 48px;
+    }
+  } */
 .c-header{
     /* max-width: 1200px;
     display: flex;
@@ -293,10 +346,13 @@ input::placeholder {
 
 .c-nav{
     font-size: 16px;
-    /* line-height: 36px; */
+    line-height: 36px;
 }
 
 .c-header__nav{
+    display: none;
+    margin-right: calc(var(--global-baseline)*2);
+
 }
 
 .c-nav__list{
@@ -307,13 +363,20 @@ input::placeholder {
 .c-nav__item {
     text-decoration: none;
     /* margin: -20px; */
+   
   }
 
 
-.c-nav__link {
+/* .c-nav__link {
     text-decoration: none;
     color: #241c15;
     display: block;
+  } */
+
+  .c-nav__link {
+    text-decoration: none;
+    display: block;
+    color: #241c15;
   }
 
 .c-nav-trigger {
@@ -324,6 +387,40 @@ input::placeholder {
     width: 24px;
     height: 24px;
   }
+
+.c-nav-trigger__svg {
+    fill: #202024;
+    height: 100%;
+}
+  
+
+  .c-nav__link--meta,
+.c-nav__link--meta:visited,
+.c-nav__link--meta:active {
+  color: black;
+}
+
+.c-nav__link--meta:hover{
+    color: var(--main-color);
+}
+
+.c-header__mobile-nav-trigger {
+display: none;
+}
+
+.has-mobile-nav .c-page {
+/* transform: translateX(-25%); */
+}
+
+.has-mobile-nav .c-mobile-nav {
+pointer-events: auto;
+transform: TranslateX(50%);
+}
+
+.has-mobile-nav .c-mobile-nav__bg {
+    opacity: 0.5;
+  }
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
@@ -339,6 +436,59 @@ input::placeholder {
     width: 250px;
 } */
 
+@media (min-width: 992px) {
+    .c-nav__list {
+      display: flex;
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+  
+    .c-nav__link {
+      /* padding: 8px 16px; */
+      margin-right: 8px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .c-header__nav {
+      display: block;
+    }
+
+  
+    .c-header__nav--main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(50%, 50%);
+      margin-top: 12px;
+    }
+  
+    .c-header__mobile-nav-trigger {
+      display: none;
+    }
+
+   
+  }
+
+  @media (max-width: 992px) {
+    
+    .c-nav__link {
+        /* padding: 8px 16px; */
+        /* margin-right: 8px; */
+        font-size: 32px;
+
+      }
+  
+    .c-header__mobile-nav-trigger {
+      display: block;
+    }
+
+    .has-mobile-nav .c-mobile-nav {
+        pointer-events: auto;
+        transform: TranslateX(60%);
+        }
+  }
+  
 
 
 @media (max-width:900px){
@@ -356,13 +506,18 @@ input::placeholder {
         height: 95px;
     }
 
-    .c-nav{
+    /* .c-nav{
         display: none;
-    }
-
-    .c-hamburgerMenu{
+    } */
+  
+    .c-header__mobile-nav-trigger{
         display: block;
     }
+
+    .has-mobile-nav .c-mobile-nav {
+        pointer-events: auto;
+        transform: TranslateX(55%);
+        }
 }
 
 /* rond hier beginnen werken met een hamburger menu */
@@ -374,6 +529,11 @@ input::placeholder {
     }
 
 
+    .has-mobile-nav .c-mobile-nav {
+        pointer-events: auto;
+        transform: TranslateX(50%);
+        }
+
 
 }
 
@@ -382,6 +542,11 @@ input::placeholder {
         height: 350px;
         width: 300px;
     }
+
+    .has-mobile-nav .c-mobile-nav {
+        pointer-events: auto;
+        transform: TranslateX(45%);
+        }
 
    
 }

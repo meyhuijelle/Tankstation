@@ -1,15 +1,11 @@
 const listenToSideNav = function() {
-    const hamburgerMenuButton = document.querySelector('.js-toggle-nav')
-    hamburgerMenuButton.addEventListener('click', function(){
-        console.log('Er is op me gedrukt!');
-        document.querySelector("body").classList.toggle("has-mobile-nav");
-    })
-    // const other = document.querySelector('body')
-    // other.addEventListener('click', function(){
-    //     console.log('Er is op de body gedrukt!')
-    //     // document.querySelector("body").classList.remove("has-mobile-nav");
-
-    // })
+    let toggleTrigger = document.querySelectorAll(".js-toggle-nav");
+                for (let i = 0; i < toggleTrigger.length; i++) {
+                    toggleTrigger[i].addEventListener("click", function() {
+                        console.log("Er is op het hamburgermenu gedrukt!");
+                        document.querySelector("body").classList.toggle("has-mobile-nav");
+                    })
+                }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
