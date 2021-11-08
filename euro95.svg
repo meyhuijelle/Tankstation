@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
+  <g id="Group_22" data-name="Group 22" transform="translate(-1257 1433)">
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="#fff" stroke="#000" stroke-width="3">
+      <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
+      <ellipse cx="39.5" cy="40" rx="38" ry="38.5" fill="none"/>
+    </g>
+    <text id="E10" transform="translate(1270 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">E10</tspan></text>
+  </g>
+</svg>
