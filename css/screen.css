@@ -27,6 +27,7 @@
     --global-page-color-front: black;
 
     /* --main-color: #0041FF; */
+    --main-color-xxx-light: #63C99E;
     --main-color: #325FE4;
     --main-color-x-dark: #2D55CC;
     --main-color-xx-dark: #274AB3;
@@ -417,6 +418,19 @@ aside{
 display: none;
 }
 
+.c-main{
+    border: 1px solid black;
+    display: flex;
+}
+
+.c-side--nav{
+    height: 500px;
+    border: 1px solid black;
+    margin: 120px 0 120px 80px;
+    display: flex;
+    align-items: center;
+}
+
 .has-mobile-nav .c-page {
 /* transform: translateX(-25%); */
 }
@@ -452,6 +466,42 @@ transform: TranslateX(50%);
 .u-contactUs{
     
 }
+
+.u-euro95{
+    border: 1px solid white;
+    width: 200px;
+    /* border: 2px solid var(--main-color); */
+    border-radius: 15px;
+    background-color: var(--main-color-xxx-light);
+    color: white;
+}
+
+.u-euro95TXT{
+    margin-left: 8px;
+}
+
+.u-euro95svg{
+    width: 20px;
+    height: 20px;
+}
+
+.u-euro98{
+    border: 1px solid black;
+    width: 200px;
+}
+
+.u-diesel{
+    border: 1px solid black;
+    width: 200px;
+}
+
+/* 
+.u-layoutNav{
+    border: 1px solid black;
+    border-radius: 100%;
+    padding: 4px; */
+    /* background-color: white; */
+/* } */
 
 /* .u-div-width{
     width: 250px;
