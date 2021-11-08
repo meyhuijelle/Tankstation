@@ -256,6 +256,15 @@ aside{
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+.c-contact{
+    background-color: black;
+    height: 200px;
+    color: white;
+    /* border: 2px solid black; */
+    /* opacity: 0.8; */
+    
+
+}
 
 .c-page {
     position: relative;
@@ -432,6 +441,17 @@ transform: TranslateX(50%);
     
 }
 
+.u-width-contact{
+    /* max-width: 200px; */
+    /* border: 1px solid red; */
+    margin: 40px 40px 0px;
+    position: absolute;
+}
+
+.u-contactUs{
+    
+}
+
 /* .u-div-width{
     width: 250px;
 } */
@@ -565,6 +585,47 @@ transform: TranslateX(50%);
         transform: TranslateX(50%);
         }
 
+    .c-contact{
+        background-color: black;
+        height: 120px;
+        color: white;
+        /* border: 2px solid black; */
+        /* opacity: 0.8; */
+        /* margin-bottom: 40px; */
+        
+
+    }
+
+    .u-width-contact{
+        /* max-width: 200px; */
+        /* border: 1px solid red; */
+        margin: 10px 15px;
+        position: absolute;
+    }
+    
+    .u-contactUs{
+        font-size: 22px;
+        margin-bottom: 16px;
+        /* margin-left: 4px; */
+    }
+    
+    .u-email{
+        font-size: 14px;
+        
+    }
+
+    .u-tel{
+        font-size: 14px;
+    }
+    
+    p{
+        margin: 8px 0;
+    }
+
+    /* h3{
+        margin: 8px;
+    } */
+
    
 }
 
@@ -577,6 +638,30 @@ transform: TranslateX(50%);
     .c-nav__link{
         font-size: 24px;
     }
+
+    .c-header_logo{
+        /* height: 75px;
+        width: 75px;
+        border: 1px solid var(--global-page-color-front);
+        border-radius: 100%; */
+        display: block;
+        margin-left: 0;
+    
+    }
+
+    .u-width-logo{
+        /* max-width: 100px;
+        height: 50px; */
+    }
+
+    .c-header{
+      
+        margin: calc(var(--global-baseline) *2);
+        margin-bottom: 8px;
+    
+    }
+
+    
 
 
 }
