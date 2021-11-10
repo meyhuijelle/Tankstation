@@ -552,6 +552,8 @@ transform: TranslateX(50%);
     /* box-shadow: 0px 0px gray; */
 
     box-shadow: 4px 4px 3px #888888;
+    transition: all 0.2s ease;
+
 
     /* --stroke-color: white;
     --svg-text-color: white; */
@@ -589,6 +591,8 @@ transform: TranslateX(50%);
     /* box-shadow: 2px 4px 6px #888888; */
 
     box-shadow: 4px 4px 3px #888888;
+    transition: all 0.2s ease;
+
 
 
     /* box-shadow: 5px 10px 8px #888888; */
@@ -641,6 +645,9 @@ transform: TranslateX(50%);
     /* border: 1px solid #888888; */
     /* box-shadow: 2px 2px gray; */
     box-shadow: 4px 4px 3px #888888;
+
+    transition: all 0.2s ease;
+
 
     /* box-shadow: 5px 10px 8px #888888; */
 }
