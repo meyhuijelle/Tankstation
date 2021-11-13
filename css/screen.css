@@ -237,6 +237,7 @@ aside{
 .o-container{
     margin: 0 auto;
     max-width: 1200px;
+    /* border: 5px solid hotpink; */
 }
 
 .o-list{
@@ -272,15 +273,55 @@ aside{
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+
+
+.c-item{
+    /* border: 1px solid white; */
+    /* width: 400px; */
+    height: 88px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* align-items: center; */
+    /* column-gap: normal; */
+    align-items: center;
+    /* flex-direction: row; */
+    /* border: 1px solid white */
+    
+
+}
+
 .c-contact{
     background-color: black;
     height: 200px;
     color: white;
+   
     /* border: 2px solid black; */
     /* opacity: 0.8; */
     
 
 }
+
+.c-footer{
+    max-width: 1200px;
+    height: 200px;
+    /* background-color: green; */
+    display: flex;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    font-size: 16px;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid white;
+}
+
+/* display: flex;
+flex-flow: row wrap;fd
+width: 660px;
+justify-content: space-between;
+border: 1px solid grey; */
+
+
+
 
 .c-page {
     position: relative;
@@ -493,6 +534,66 @@ transform: TranslateX(50%);
 #UTILITIES
 \*------------------------------------*/
 
+
+
+/* .u-emailsvgdiv{
+    margin: 0 auto;
+    padding: 0;
+    
+} */
+/* 
+.c-footer {
+    display: flex;
+    flex-flow: row wrap;
+    width: 660px;
+    justify-content: space-between;
+    border: 1px solid grey;
+  } */
+  /* .container .item {
+    width: 200px;
+    background: hotpink;
+  } */
+
+.test{
+    display: block;
+    background-color: hotpink;
+    width: 200px;
+
+    /* margin-left: 500px; */
+
+}
+
+.u-itemsvg{
+    fill: white;
+    width: 56px;
+    height: 56px;
+    
+    margin: 0 auto;
+    margin-bottom: 0;
+    margin-right: 24px;
+    margin: 0 24px 0 0;
+}
+
+
+
+.u-itemtxt{
+    margin-top: 0;
+    margin: 0 auto;
+}
+
+.u-itemtxthead{
+    font-size: 24px;
+    margin: 0;
+}
+
+/* .u-emailtxtdiv{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; */
+    /* margin-bottom: 24px; */
+/* } */
+
+
 .u-header-name{
     font-size: 24px;
     display: flex;
@@ -500,17 +601,15 @@ transform: TranslateX(50%);
     
 }
 
-.u-width-contact{
+/* .u-width-contact{ */
     /* max-width: 200px; */
     /* border: 1px solid red; */
-    margin: 40px 40px 0px;
-    position: absolute;
+    /* margin: 24px 0 0; */
+    /* margin-top: 40px; */
+    /* position: absolute; */
     /* width: 1200px; */
-}
+/* } */
 
-.u-contactUs{
-    
-}
 
 .u-euro95{
     border: 1px solid #888888;
@@ -916,7 +1015,9 @@ transform: TranslateX(50%);
         /* border: 2px solid black; */
         /* opacity: 0.8; */
         /* margin-bottom: 40px; */
-        
+        /* /* display: flex; */
+        /* display: flex;
+        align-content: center; */
 
     }
 
@@ -927,11 +1028,11 @@ transform: TranslateX(50%);
         position: absolute;
     }
     
-    .u-contactUs{
+    /* .u-contactUs{
         font-size: 22px;
-        margin-bottom: 16px;
+        margin-bottom: 16px; */
         /* margin-left: 4px; */
-    }
+    /* } */
     
     .u-email{
         font-size: 14px;
