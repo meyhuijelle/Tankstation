@@ -292,10 +292,10 @@ aside{
 
 @keyframes gasdrophover {
     0%{ 
-      transform: translateY(70%);
+      transform: translateY(-5%);
       /* background-color: green; */
       /* opacity: 0; */
-      opacity: 0;
+      
     }
 
         /* 50%{
@@ -303,7 +303,8 @@ aside{
         } */
 
     100%{
-      transform: translateY(-5%);
+      transform: translateY(100%);
+      opacity: 0;
       /* background-color: green; */
       /* opacity: 10; */
       /* opacity: 0; */
@@ -313,9 +314,10 @@ aside{
 .c-gas-drop-css-anim{
     animation-name: gasdrophover;
     animation-duration: 1.3s;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-out;
     animation-iteration-count: infinite;
-    animation-direction:reverse;
+    animation-direction:forwards;
+    /* animation-iteration-count: forwards; */
     
   }
 
