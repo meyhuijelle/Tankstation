@@ -1,3 +1,16 @@
+// let tl = gsap.timeline({
+//     defaults: {
+//       duration: 1,
+//       ease: 'power1.inOut',
+//     },
+//     repeat: -1,
+//     yoyo: true,
+//   })
+
+//   tl.set('#gas_drop_logo', {
+//     transformOrigin: '50% 100%',
+//   })
+
 const listenToSideNav = function() {
     let toggleTrigger = document.querySelectorAll(".js-toggle-nav");
     let contactNav = document.querySelector(".js-contact");
