@@ -583,6 +583,11 @@ transform: TranslateX(50%);
 #UTILITIES
 \*------------------------------------*/
 
+.u-quote{
+    font-size: 32px;
+    
+}
+
 .u-logo-width{
     /* height: 200px;
     width: 200px; */
