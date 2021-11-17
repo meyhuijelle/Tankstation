@@ -245,6 +245,8 @@ aside{
     font-family: "Praise";
     font-size: 64px;
     margin : 0 auto;
+    /* margin-left: -8px; */
+    /* padding-left: -80px; */
 }
 
 
