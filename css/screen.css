@@ -640,6 +640,50 @@ transform: TranslateX(50%);
     margin-top: 48px;
 }
 
+.u-pointer{
+    position: absolute;
+    /* margin-bottom: 80px; */
+    
+}
+
+@keyframes pointeranimation {
+    /* 0%{ 
+      transform: translateY(-5%); */
+      /* background-color: green; */
+      /* opacity: 0; */
+      
+    /* } */
+
+        /* 50%{
+            opacity: 1;
+        } */
+
+    0%{
+        transform: rotate(750deg)
+    }
+    100%{
+      transform: rotate(0deg)
+     
+    }
+   
+  }
+
+.c-pointer-css-anim{
+    animation-name: pointeranimation;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    /* animation-iteration-count: infinite; */
+    /* animation-direction:forwards; */
+    /* animation-iteration-count: forwards; */
+    /* opacity: 0; */
+    
+  }
+
+.u-textLogo{
+    padding-top: 32px;
+    padding-left: 48px;
+}
+
 
 
 /* .u-emailsvgdiv{
