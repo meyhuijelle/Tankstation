@@ -537,7 +537,7 @@ border: 1px solid grey; */
     margin-bottom: 24px;
     width: 24px;
     height: 24px;
-    float: right;
+    /* float: right; */
   }
 
 .c-nav-trigger__svg {
@@ -560,7 +560,7 @@ border: 1px solid grey; */
 display: none;
 /* width: 160px; */
 /* padding-left: 80px; */
-width: 80px;
+/* width: 80px; */
 }
 
 .c-main{
