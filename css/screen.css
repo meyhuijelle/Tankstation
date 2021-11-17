@@ -14,6 +14,19 @@
     src: url("../fonts/Mukta-SemiBold.woff2") format("woff2")
 }
 
+@font-face {
+    font-family: "Praise";
+    font-weight: 600;
+    src: url("../fonts/Praise-Regular.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: "Pacifico";
+    font-weight: 600;
+    src: url("../fonts/Pacifico-Regular.woff2") format("woff2")
+}
+
+
 
 
 
@@ -228,6 +241,12 @@ aside{
     margin-right: -50px;
 }
 
+.hello{
+    font-family: "Praise";
+    font-size: 64px;
+    margin : 0 auto;
+}
+
 
 /* u{
     color: var(--main-color);
@@ -291,23 +310,29 @@ aside{
 
 
 @keyframes gasdrophover {
-    0%{ 
-      transform: translateY(-5%);
+    /* 0%{ 
+      transform: translateY(-5%); */
       /* background-color: green; */
       /* opacity: 0; */
       
-    }
+    /* } */
 
         /* 50%{
             opacity: 1;
         } */
 
-    100%{
+    0%{
+        opacity: 1;
+    }
+    99%{
       transform: translateY(100%);
       opacity: 0;
       /* background-color: green; */
       /* opacity: 10; */
       /* opacity: 0; */
+    }
+    100%{
+        opacity: 0;
     }
   }
 
@@ -315,9 +340,10 @@ aside{
     animation-name: gasdrophover;
     animation-duration: 1.3s;
     animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
-    animation-direction:forwards;
+    /* animation-iteration-count: infinite; */
+    /* animation-direction:forwards; */
     /* animation-iteration-count: forwards; */
+    opacity: 0;
     
   }
 
@@ -462,11 +488,14 @@ border: 1px solid grey; */
 .c-nav{
     font-size: 16px;
     line-height: 36px;
+    /* float: right; */
 }
 
 .c-header__nav{
     display: none;
     margin-right: calc(var(--global-baseline)*2);
+    /* width: 160px; */
+    /* border: 1px solid hotpink; */
 
 }
 
@@ -474,6 +503,8 @@ border: 1px solid grey; */
     display: flex;
     /* gap: var(--global-baseline); */
     gap: 2px;
+    /* margin-right: 0; */
+    /* float: center; */
 }
 
 
@@ -504,6 +535,7 @@ border: 1px solid grey; */
     margin-bottom: 24px;
     width: 24px;
     height: 24px;
+    float: right;
   }
 
 .c-nav-trigger__svg {
@@ -524,6 +556,9 @@ border: 1px solid grey; */
 
 .c-header__mobile-nav-trigger {
 display: none;
+/* width: 160px; */
+/* padding-left: 80px; */
+width: 80px;
 }
 
 .c-main{
@@ -1140,6 +1175,7 @@ transform: TranslateX(50%);
         border-radius: 100%; */
         display: block;
         margin-left: 0;
+        width: 160px;
     
     }
 
