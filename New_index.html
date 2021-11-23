@@ -11,7 +11,9 @@
 
 </head>
 <body>
+<!-- Container -->
    <div class="o-container">
+    <!-- Header -->
      <div class="c-header">
             <div id="header">
                 <div class="grid_item_header_1">
@@ -69,10 +71,22 @@
      </div>
      <hr>
 
+     <!-- Main -->
         <div id="main">
         <div class="grid_item_main_1">
-            <aside class="c-side--nav">
-                <div class="u-side--nav-small">
+            <!-- This is a checkbox for when the screen becomes to small  -->
+            <div class="c-checkbox">
+                <input type="checkbox" id="euro95" name="euro95" value="euro95">
+                <label for="euro95"> Euro 95 </label><br>
+
+                <input type="checkbox" id="euro98" name="euro98" value="euro98">
+                <label for="euro98"> Euro 98 </label><br>
+
+                <input type="checkbox" id="diesel" name="diesel" value="diesel">
+                <label for="diesel"> Diesel </label><br>
+            </div>
+            <!-- <div class="c-side--nav"> -->
+                <!-- <div class="u-side--nav-small"> -->
                     <button class="u-euro95 js-euro95">
                     <p class="u-euro95TXT">Euro 95</p>      
                     <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
@@ -112,16 +126,49 @@
                         </g>
                     </svg>
                     </button>
-                </div>
-                </aside>
+                <!-- </div> -->
+                <!-- </div> -->
         </div>
+
+        
+
         <div class="grid_item_main_2">
             <div class="c-map" id="map">
                 <img src="./img/0_fMz62Ks_u0QvVQ1E.png" alt="">
             </div>
             </div>
         </div>
+
+        
+
         </div>
+
+
+            <!-- Footer -->
+
+    <div id="contact" class="c-contact">
+        <div class="c-footer" id="footer">
+            <div class="grid_item_footer_1">
+                <div class="c-item">
+                    <!-- <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg> -->
+                    <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 4.99L4 6h16zm0 12H4V8l8 5 8-5v10z"/></svg>                 <div class="u-emailtxtdiv"> 
+                     <p class="u-itemtxthead">E-mail us:</p>
+                     <p class="u-itemtxt">jelle.meyhui@student.howest.be</p>
+                  </div>
+                  </div>  
+            </div>
+    
+            <div class="grid_item_footer_2">
+                <div class="c-item">
+                    <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                   <div class="u-emailtxtdiv"> 
+                     <p class="u-itemtxthead">Call us:</p>
+                     <p class="u-itemtxt">Tel: 04 780 008 76</p>
+                  </div>
+                  </div>  
+            </div>
+        </div>
+    </div>
 
 
     <!-- This is the side navigation for when the screen becomes to small -->

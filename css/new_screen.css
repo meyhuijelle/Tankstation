@@ -277,17 +277,47 @@ aside{
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 740px;
+    justify-items: center;
+    /* align-items: center; */
+    align-items: center;
+    
 }
 
 .grid_item_main_1{
-    /* border: 1px solid hotpink; */
-    /* align-self: start; */
+
 }
 
 .grid_item_main_2{
+    /* Gebruikt om te testen */
+
     /* border: 1px solid green; */
     /* align-self: end; */
 }
+
+#footer{
+    display: grid;
+    /* width: 1200px; */
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 200px;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 32px;
+    gap: 80px;
+    
+}
+
+.grid_item_footer_1{
+    /* Gebruikt om te testen */
+    /* border: 1px solid hotpink; */
+}
+
+.grid_item_footer_2{
+    /* Gebruikt om te testen */
+    /* border: 1px solid green; */
+}
+
+
+
 
 /* u{
     color: var(--main-color);
@@ -337,6 +367,18 @@ aside{
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+
+
+.c-checkbox{
+    display: none;
+    /* display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 24px; */
+
+}
+
+
 /* 
 #Path_9{
     fill: var(--color-Path_9);
@@ -419,16 +461,16 @@ aside{
 
 .c-footer{
     max-width: 1200px;
-    height: 200px;
+    /* height: 200px; */
     /* background-color: green; */
-    display: flex;
-    margin: 0 auto;
-    flex-flow: row wrap;
+    /* display: flex;
+    margin: 0 auto; */
+    /* flex-flow: row wrap;
     font-size: 16px;
-    align-items: center;
+    align-items: center; */
     /* justify-content: space-evenly; */
     /* border: 1px solid white; */
-    gap: 80px;
+    /* gap: 80px; */
 }
 
 /* display: flex;
@@ -457,7 +499,7 @@ border: 1px solid grey; */
     /* padding-top: 160px; */
     display: flex;
     margin: 0 auto;
-    margin-top: 72px;
+    /* margin-top: 72px; */
 }
 
 .c-mobile-nav {
@@ -617,7 +659,7 @@ display: none;
     height: 500px;
     /* border: 1px solid black; */
     margin: 120px 0 120px 80px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 
@@ -1131,29 +1173,37 @@ transform: TranslateX(50%);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 20% 80%;
+        align-items: center;
+    }
+
+    .grid_item_main_1{
+        height: 50px;
+        display: flex;
+        gap: 16px;
+        margin: 48px 0; 
     }
 
    
 
     .u-side--nav-small{
-        height: 50px;
+        /* height: 50px; */
         /* border: 1px solid black;
         margin: 120px 0 120px 80px;
         display: flex;
         align-items: center; */
-        display: flex;
-        align-items: center;
-        gap: 16px;
+        /* display: flex; */
+        /* align-items: center; */
+        /* gap: 16px; */
     }
   }
   
 
 
 @media (max-width:900px){
-    .c-map{
+    /* .c-map{
         height: 500px;
         width: 500px;
-    }
+    } */
 
     .o-container{
         max-width: 700px;
@@ -1180,9 +1230,92 @@ transform: TranslateX(50%);
     .c-nav__link{
         font-size:24px;
     }
+/* 
+    #main{
+        display: grid;
+        grid-template-columns: 500px;
+        grid-template-rows: 1fr 4fr; */
+        /* justify-items: center; */
+    /* } */
+
+    /* .c-side--nav{ */
+        
+        /* border: 1px solid black; */
+        /* margin: 120px 0 120px 80px; */
+        /* margin: 80px 16px 32px;
+        
+
+    } */
+
+    #main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20% 80%;
+        align-items: center;
+    }
+
+    .grid_item_main_1{
+        height: 50px;
+        /* width: 600px; */
+        display: flex;
+        gap: 16px;
+        margin: 48px 0; 
+    }
+
+    .c-map{
+        width: 500px;
+        height: 500px;
+    }
+
+
+
 }
 
 /* rond hier beginnen werken met een hamburger menu */
+
+
+@media (max-width:700px){
+
+    .u-euro95{
+        display: none;
+    }
+
+    .u-euro98{
+        display: none;
+    }
+
+    .u-diesel{
+        display: none;
+    }
+
+    .c-checkbox{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 24px;
+    
+    }
+
+    
+    .has-mobile-nav .c-mobile-nav {
+        pointer-events: auto;
+        transform: TranslateX(60%);
+    }
+
+    .grid_item_main_1{
+        
+
+    }
+    
+    .grid_item_main_2{
+        /* Gebruikt om te testen */
+    
+        /* border: 1px solid green; */
+        /* align-self: end; */
+    }
+
+
+}
 
 @media (max-width:600px){
     .c-map{
