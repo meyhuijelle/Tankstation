@@ -183,6 +183,9 @@ caption{
 
 th{
     text-align: center;
+    color: black;
+    /* font-weight:bolder; */
+    background-color: #ddd;
 }
 
 .th_width_station{
@@ -210,12 +213,12 @@ th, td{
     padding: 8px;
 }
 
-th{
-    /* background-color: var(--main-color); */
+/* th{
+
     color: black;
-    /* font-weight:bolder; */
+
     background-color: #ddd;
-}
+} */
 
 /* tr:nth-child(even){
     background-color: #ddd;
@@ -386,7 +389,7 @@ aside{
     /* border: 1px solid black; */
     /* align-items: center; */
     justify-items: start;
-    margin-bottom: 32px;
+    margin-bottom: 80px;
     /* margin-left: 32px; */
     /* margin-top: 120px; */
 }
