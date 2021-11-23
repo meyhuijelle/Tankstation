@@ -169,6 +169,61 @@ address,
 figure {
 }
 
+table{
+    /* width: 1200px; */
+    margin: 48px 16px 0;
+    
+}
+
+caption{
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 8px;;
+}
+
+th{
+    text-align: center;
+}
+
+.th_width_station{
+    width: 800px;
+}
+
+.th_width_province{
+    width: 200px;
+}
+
+.th_width_country{
+    width: 200px;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td{
+    text-align: center;
+}
+
+th, td{
+    padding: 8px;
+}
+
+th{
+    /* background-color: var(--main-color); */
+    color: black;
+    /* font-weight:bolder; */
+    background-color: #ddd;
+}
+
+/* tr:nth-child(even){
+    background-color: #ddd;
+} */
+
+
+
+
 ul,
 ol {
     padding-left: var(--global-whitespace);
@@ -307,7 +362,8 @@ aside{
     gap: 80px;
     
     width: 1200px;
-    border: 1px solid hotpink;
+    /* border: 1px solid hotpink; */
+    /* margin-left: 80px; */
     
 }
 
@@ -321,7 +377,19 @@ aside{
     /* border: 1px solid green; */
 }
 
-
+#table{
+    /* border: 1px solid hotpink; */
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    grid-template-rows: 1fr;
+    /* border: 1px solid black; */
+    /* align-items: center; */
+    justify-items: start;
+    margin-bottom: 32px;
+    /* margin-left: 32px; */
+    /* margin-top: 120px; */
+}
 
 
 /* u{
@@ -468,6 +536,7 @@ input{
    
     /* border: 2px solid black; */
     /* opacity: 0.8; */
+    /* margin: 0 auto; */
     
 
 }
@@ -1102,20 +1171,32 @@ transform: TranslateX(50%);
     width: 250px;
 } */
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .c-nav__list {
       display: flex;
       margin-left: -16px;
       margin-right: -16px;
     }
   
-    .c-nav__link {
+    .c-nav__link { */
       /* padding: 8px 16px; */
-      margin-right: 8px;
+      /* margin-right: 8px;
     }
-  }
+  } */
 
   @media (min-width: 992px) {
+    
+    .c-nav__list {
+        display: flex;
+        margin-left: -16px;
+        margin-right: -16px;
+      }
+    
+      .c-nav__link {
+        /* padding: 8px 16px; */
+        margin-right: 8px;
+      }
+
     .c-header__nav {
       display: block;
     }
@@ -1137,9 +1218,11 @@ transform: TranslateX(50%);
         
         margin: 32px;
         gap: 32px;
+        margin: 0 auto;
 
         
     }
+
 
    
   }
@@ -1231,6 +1314,10 @@ transform: TranslateX(50%);
         margin: 32px;
         gap: 32px;
         
+    }
+
+    .c-contact{
+        margin-top: 32px;
     }
   }
   
