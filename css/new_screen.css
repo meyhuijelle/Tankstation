@@ -1115,7 +1115,7 @@ transform: TranslateX(50%);
     .c-side--nav{
         height: 50px;
         /* margin: 0; */
-        display: flex;
+        /* display: flex; */
         /* margin: 0 auto; */
         /* margin: 10px 0 10px 10px; */
         justify-content: center;
@@ -1125,6 +1125,12 @@ transform: TranslateX(50%);
 
 
 
+    }
+
+    #main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20% 80%;
     }
 
    
