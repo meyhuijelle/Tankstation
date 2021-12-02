@@ -50,21 +50,53 @@ const listenToSideNav = function() {
         console.log("er is gedrukkkkktttt!!");
         euro95btn.classList.toggle('u-euro95');
         euro95btn.classList.toggle('is-pressed');
-        showEuro95();
+
+        euro98btn.classList.remove('is-pressed');
+        euro98btn.classList.add('u-euro98');
+
+        dieselbtn.classList.remove('is-pressed');
+        dieselbtn.classList.add('u-diesel')
+
+        if(euro95btn.classList.contains('is-pressed')){
+            getStationsEuro95();
+        }else{
+            getStations();
+        }
     })
 
     euro98btn.addEventListener('click', function(){
         console.log("er is gedrukkkkktttt!!");
         euro98btn.classList.toggle('u-euro98');
         euro98btn.classList.toggle('is-pressed');
-        showEuro95();
+
+        euro95btn.classList.remove('is-pressed');
+        euro95btn.classList.add('u-euro98');
+
+        dieselbtn.classList.remove('is-pressed');
+        dieselbtn.classList.add('u-diesel')
+        if(euro98btn.classList.contains('is-pressed')){
+            getStationsEuro98();
+        }else{
+            getStations();
+        }
     })
 
     dieselbtn.addEventListener('click', function(){
         console.log("er is gedrukkkkktttt!!");
         dieselbtn.classList.toggle('u-diesel');
         dieselbtn.classList.toggle('is-pressed');
-        showEuro95();
+
+        euro95btn.classList.remove('is-pressed');
+        euro95btn.classList.add('u-euro98');
+
+        euro98btn.classList.remove('is-pressed');
+        euro98btn.classList.add('u-euro98');
+        
+        if(dieselbtn.classList.contains('is-pressed')){
+            getStationsDiesel();
+        }else{
+            getStations();
+        }
     })
 
     
@@ -77,6 +109,8 @@ const showStations = function (jsonObject) {
 
     console.log(jsonObject);
     // console.log(jsonObject[0].coords)
+    layergroup.clearLayers();
+
     for(const station of jsonObject){
         console.log("ben er")
         console.log(station)
@@ -84,7 +118,7 @@ const showStations = function (jsonObject) {
         const adres = station.adres; // this = het element waaraan je de eventlistener koppelt
         const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
         maakMarker(coords, adres, stationNaam);
-        showEuro95();
+        // showEuro95();
     }
     
     
@@ -105,31 +139,52 @@ const showStationsEuro95 = function (jsonObject) {
         const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
         const gastype = station.gastype;
         const price = station.price;
-        maakMarkerEuro95(coords, adres, stationNaam, gastype, price);
+        maakMarkerGasType(coords, adres, stationNaam, gastype, price);
     }
     
     
   };
 
 
+  const showStationsEuro98 = function (jsonObject) {
+    //Toon menu
+    // console.log("gaat het")
 
-const showEuro95 = function(){
-    console.log(euro95btn.classList)
-    const classlist = euro95btn.classList.toString()
-    // console.log(klas)
-    if(classlist.includes("is-pressed")){
-        console.log("jaaa");
-        // gastype = "euro95";
-        // console.log(gastype)
-        // layergroup.clearLayers();
-        // getStations();
-        getStationsEuro95();
+    console.log(jsonObject);
+    // console.log(jsonObject[0].coords)
+    layergroup.clearLayers();
+    for(const station of jsonObject){
+        console.log("ben er")
+        console.log(station)
+        const coords = station.coords; // this = het element waaraan je de eventlistener koppelt
+        const adres = station.adres; // this = het element waaraan je de eventlistener koppelt
+        const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
+        const gastype = station.gastype;
+        const price = station.price;
+        maakMarkerGasType(coords, adres, stationNaam, gastype, price);
+    }
+    
+    
+  };
 
-    }
-    else{
-        console.log("nooo");
-    }
-}
+
+// const showEuro95 = function(){
+//     console.log(euro95btn.classList)
+//     const classlist = euro95btn.classList.toString()
+//     // console.log(klas)
+//     if(classlist.includes("is-pressed")){
+//         console.log("jaaa");
+//         // gastype = "euro95";
+//         // console.log(gastype)
+//         // layergroup.clearLayers();
+//         // getStations();
+//         getStationsEuro95();
+
+//     }
+//     else{
+//         console.log("nooo");
+//     }
+// }
 
 
 const maakMarker = function (coords, adres, stationNaam) {
@@ -143,12 +198,15 @@ const maakMarker = function (coords, adres, stationNaam) {
     // lat=latitude of lengtegraad
 
     // if(euro95btn.getAttribute )
-    marker.bindPopup(`<h3>Name: ${stationNaam}</h3><h1>${gastype}</h1><em>Located: ${adres}</em>`);
+    marker.bindPopup(`
+    <h3 style="margin:0 auto">Name: ${stationNaam}</h3>
+    <h4>${gastype}</h4>
+    <em style="color:black; font-size: 14px;">Located: ${adres}</em>`);
     // `` --> string litheral denkik
   };
 
 
-const maakMarkerEuro95 = function (coords, adres, stationNaam, gastype, price) {
+const maakMarkerGasType = function (coords, adres, stationNaam, gastype, price) {
     //console.log(coords);
 
     
@@ -159,7 +217,10 @@ const maakMarkerEuro95 = function (coords, adres, stationNaam, gastype, price) {
     // lat=latitude of lengtegraad
 
     // if(euro95btn.getAttribute )
-    marker.bindPopup(`<h3>Name: ${stationNaam}</h3><h1>${gastype} => ${price}</h1><em>Located: ${adres}</em>`);
+    marker.bindPopup(`
+    <h3 style="margin:0 auto">Name: ${stationNaam}</h3>
+    <p style="color:black; font-size: 22px; border:1px solid black; padding:8px; border-radius: 5px;">${gastype} => €${price}</p>
+    <em style="color:black; font-size: 14px;">Located: ${adres}</em>`);
     // `` --> string litheral denkik
   };
 
@@ -178,11 +239,23 @@ const maakMarkerEuro95 = function (coords, adres, stationNaam, gastype, price) {
 //   };
 
   const getStations = function () {
-    handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations', showStations);
+    //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations', showStations);
+    handleData('https://appsmartank.azurewebsites.net/api/gasStations', showStations);
   };
 
   const getStationsEuro95 = function () {
-    handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
+    //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
+    handleData('https://appsmartank.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
+  };
+
+  const getStationsEuro98 = function () {
+    //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
+    handleData('https://appsmartank.azurewebsites.net/api/gasStations/euro98', showStationsEuro98);
+  };
+
+  const getStationsEuro98 = function () {
+    //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
+    getStationsDiesel('https://appsmartank.azurewebsites.net/api/gasStations/euro98', showStationsDiesel);
   };
 
 document.addEventListener('DOMContentLoaded', function() {
