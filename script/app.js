@@ -90,6 +90,27 @@ const showStations = function (jsonObject) {
     
   };
 
+const showStationsEuro95 = function (jsonObject) {
+    //Toon menu
+    // console.log("gaat het")
+
+    console.log(jsonObject);
+    // console.log(jsonObject[0].coords)
+    layergroup.clearLayers();
+    for(const station of jsonObject){
+        console.log("ben er")
+        console.log(station)
+        const coords = station.coords; // this = het element waaraan je de eventlistener koppelt
+        const adres = station.adres; // this = het element waaraan je de eventlistener koppelt
+        const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
+        const gastype = station.gastype;
+        const price = station.price;
+        maakMarkerEuro95(coords, adres, stationNaam, gastype, price);
+    }
+    
+    
+  };
+
 
 
 const showEuro95 = function(){
@@ -125,6 +146,24 @@ const maakMarker = function (coords, adres, stationNaam) {
     marker.bindPopup(`<h3>Name: ${stationNaam}</h3><h1>${gastype}</h1><em>Located: ${adres}</em>`);
     // `` --> string litheral denkik
   };
+
+
+const maakMarkerEuro95 = function (coords, adres, stationNaam, gastype, price) {
+    //console.log(coords);
+
+    
+    const arr_coords = coords.split(','); //String spiltsen in een array
+    //layergroup.clearLayers(); //telkens layer leegmaken voor we een marker aanmaken! zodat we geen 5 markers bvb op 1 plaats kunnen gaan zetten.
+    let marker = L.marker(arr_coords).addTo(layergroup); //marker heeft een array nodig en geen geen string.
+    // addTo... is hier dat we de marker toevoegen aan de eerder aangemaakte layer
+    // lat=latitude of lengtegraad
+
+    // if(euro95btn.getAttribute )
+    marker.bindPopup(`<h3>Name: ${stationNaam}</h3><h1>${gastype} => ${price}</h1><em>Located: ${adres}</em>`);
+    // `` --> string litheral denkik
+  };
+
+
 
 
 // const addEventsToStations = function () {
