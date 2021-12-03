@@ -1655,21 +1655,96 @@ transform: TranslateX(50%);
 
 @media (max-width:700px){
 
+    .u-euro95TXT{
+        display: none;
+    }
+
     .u-euro95{
-        display: none;
+        width: 40px;
+        /* height: 50px; */
+        /* display: flex; */
+        border-radius: 100%;
+        /* align-items: center; */
     }
 
-    .u-euro98{
-        display: none;
+    .u-euro95:focus{
+        width: 40px;
+        /* height: 50px; */
+        /* display: flex; */
+        border-radius: 100%;
+        /* align-items: center; */
+   
     }
 
-    .u-diesel{
-        display: none;
+    .c-fuelLogo{
+        margin: 0 auto;
     }
 
     .is-pressed{
+        width: 40px;
+        height: 50px;
+        /* display: flex; */
+        border-radius: 100%;
+      
+
+    }
+
+    .is-pressed:focus{
+        width: 40px;
+        height: 50px;
+        /* display: flex; */
+        border-radius: 100%;
+      
+
+    }
+
+    .u-euro98TXT{
         display: none;
     }
+    .u-euro98{
+        width: 40px;
+        /* height: 50px; */
+        /* display: flex; */
+        border-radius: 100%;
+        /* align-items: center; */
+    
+    }
+
+    .u-euro98:focus{
+        width: 40px;
+        /* height: 50px; */
+        /* display: flex; */
+        border-radius: 100%;
+        /* align-items: center; */
+        
+    }
+
+    .u-dieselTXT{
+        display: none;
+    }
+
+
+    .u-diesel{
+        width: 40px;
+        /* height: 50px; */
+        /* display: flex; */
+        border-radius: 100%;
+        /* align-items: center; */
+       
+    }
+
+    .u-diesel:focus{
+        width: 40px;
+        /* height: 50px; */
+        /* display: flex; */
+        border-radius: 100%;
+        /* align-items: center; */
+      
+    }
+
+    /* .is-pressed{
+        display: none;
+    } */
 
 
     .c-checkbox{

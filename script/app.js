@@ -167,6 +167,27 @@ const showStationsEuro95 = function (jsonObject) {
     
   };
 
+  const showStationsDiesel = function (jsonObject) {
+    //Toon menu
+    // console.log("gaat het")
+
+    console.log(jsonObject);
+    // console.log(jsonObject[0].coords)
+    layergroup.clearLayers();
+    for(const station of jsonObject){
+        console.log("ben er")
+        console.log(station)
+        const coords = station.coords; // this = het element waaraan je de eventlistener koppelt
+        const adres = station.adres; // this = het element waaraan je de eventlistener koppelt
+        const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
+        const gastype = station.gastype;
+        const price = station.price;
+        maakMarkerGasType(coords, adres, stationNaam, gastype, price);
+    }
+    
+    
+  };
+
 
 // const showEuro95 = function(){
 //     console.log(euro95btn.classList)
@@ -253,9 +274,9 @@ const maakMarkerGasType = function (coords, adres, stationNaam, gastype, price) 
     handleData('https://appsmartank.azurewebsites.net/api/gasStations/euro98', showStationsEuro98);
   };
 
-  const getStationsEuro98 = function () {
+  const getStationsDiesel = function () {
     //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
-    getStationsDiesel('https://appsmartank.azurewebsites.net/api/gasStations/euro98', showStationsDiesel);
+    handleData('https://appsmartank.azurewebsites.net/api/gasStations/diesel', showStationsDiesel);
   };
 
 document.addEventListener('DOMContentLoaded', function() {
