@@ -584,6 +584,7 @@ border: 1px solid grey; */
     display: flex;
     margin: 0 auto;
     /* margin-top: 72px; */
+    z-index: 0
 }
 
 .c-mobile-nav {
@@ -615,6 +616,7 @@ border: 1px solid grey; */
     width: 100vw;
     background-color: #fff;
     /* border: 1px solid gray; */
+    z-index: 1;
   }
 
   .c-mobile-nav__header {
