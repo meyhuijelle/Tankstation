@@ -296,3 +296,5 @@ document.addEventListener('DOMContentLoaded', function() {
     listenToSideNav();
     getStations();
 });
+
+// dit is een test om te kijken of github werkt!
