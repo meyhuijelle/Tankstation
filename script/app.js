@@ -295,6 +295,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     listenToSideNav();
     getStations();
+
+    document.getElementById("barFilled").style.width = "10%";
+    const gasprice = document.querySelector(".js-gasprice");
+    gasprice.innerHTML = `10euro`;
+    // document.getElementById("barFilled").style.backgroundColor = "green";
 });
 
 // dit is een test om te kijken of github werkt!
