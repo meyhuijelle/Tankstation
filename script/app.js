@@ -261,22 +261,26 @@ const maakMarkerGasType = function (coords, adres, stationNaam, gastype, price) 
 
   const getStations = function () {
     //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations', showStations);
-    handleData('https://appsmartank.azurewebsites.net/api/gasStations', showStations);
+    // handleData('https://appsmartank.azurewebsites.net/api/gasStations', showStations);
+    handleData('https://testfortankstations.azurewebsites.net/api/gasStations', showStations);
   };
 
   const getStationsEuro95 = function () {
     //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
-    handleData('https://appsmartank.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
+    // handleData('https://appsmartank.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
+    handleData('https://testfortankstations.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
   };
 
   const getStationsEuro98 = function () {
     //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
-    handleData('https://appsmartank.azurewebsites.net/api/gasStations/euro98', showStationsEuro98);
+    // handleData('https://appsmartank.azurewebsites.net/api/gasStations/euro98', showStationsEuro98);
+    handleData('https://testfortankstations.azurewebsites.net/api/gasStations/euro98', showStationsEuro98);
   };
 
   const getStationsDiesel = function () {
     //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations/euro95', showStationsEuro95);
-    handleData('https://appsmartank.azurewebsites.net/api/gasStations/diesel', showStationsDiesel);
+    // handleData('https://appsmartank.azurewebsites.net/api/gasStations/diesel', showStationsDiesel);
+    handleData('https://testfortankstations.azurewebsites.net/api/gasStations/diesel', showStationsDiesel);
   };
 
 document.addEventListener('DOMContentLoaded', function() {
