@@ -53,7 +53,7 @@ const listenToSideNav = function() {
         euro98btn.classList.toggle('is-pressed');
 
         euro95btn.classList.remove('is-pressed');
-        euro95btn.classList.add('u-euro98');
+        euro95btn.classList.add('u-euro95');
 
         dieselbtn.classList.remove('is-pressed');
         dieselbtn.classList.add('u-diesel')
@@ -70,7 +70,7 @@ const listenToSideNav = function() {
         dieselbtn.classList.toggle('is-pressed');
 
         euro95btn.classList.remove('is-pressed');
-        euro95btn.classList.add('u-euro98');
+        euro95btn.classList.add('u-euro95');
 
         euro98btn.classList.remove('is-pressed');
         euro98btn.classList.add('u-euro98');
