@@ -1,16 +1,3 @@
-// let tl = gsap.timeline({
-//     defaults: {
-//       duration: 1,
-//       ease: 'power1.inOut',
-//     },
-//     repeat: -1,
-//     yoyo: true,
-//   })
-
-//   tl.set('#gas_drop_logo', {
-//     transformOrigin: '50% 100%',
-//   })
-
 'use strict';
 
 const provider = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
@@ -21,20 +8,16 @@ let euro95btn = document.querySelector(".js-euro95");
 let euro98btn = document.querySelector(".js-euro98");
 let dieselbtn = document.querySelector(".js-diesel");
 
-// const coords, adres, stationNaam
+
 
 let gastype = "";
 
-// let stations = ["shell", "gassprom"];
-// let coordinates = ["50.831510,3.262840", "50.631510,3.262840"];
-// let adresses = ["oeselgem", "zulte"];
+
 
 const listenToSideNav = function() {
     let toggleTrigger = document.querySelectorAll(".js-toggle-nav");
     let contactNav = document.querySelector(".js-contact");
-    // let euro95btn = document.querySelector(".js-euro95");
-    // let euro98btn = document.querySelector(".js-euro98");
-    // let dieselbtn = document.querySelector(".js-diesel");
+    
 
                 for (let i = 0; i < toggleTrigger.length; i++) {
                     toggleTrigger[i].addEventListener("click", function() {
@@ -104,11 +87,9 @@ const listenToSideNav = function() {
 }
 
 const showStations = function (jsonObject) {
-    //Toon menu
-    // console.log("gaat het")
+   
 
     console.log(jsonObject);
-    // console.log(jsonObject[0].coords)
     layergroup.clearLayers();
 
     for(const station of jsonObject){
@@ -118,7 +99,6 @@ const showStations = function (jsonObject) {
         const adres = station.adres; // this = het element waaraan je de eventlistener koppelt
         const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
         maakMarker(coords, adres, stationNaam);
-        // showEuro95();
     }
     
     
@@ -126,10 +106,9 @@ const showStations = function (jsonObject) {
 
 const showStationsEuro95 = function (jsonObject) {
     //Toon menu
-    // console.log("gaat het")
+    
 
     console.log(jsonObject);
-    // console.log(jsonObject[0].coords)
     layergroup.clearLayers();
     for(const station of jsonObject){
         console.log("ben er")
@@ -148,7 +127,7 @@ const showStationsEuro95 = function (jsonObject) {
 
   const showStationsEuro98 = function (jsonObject) {
     //Toon menu
-    // console.log("gaat het")
+  
 
     console.log(jsonObject);
     // console.log(jsonObject[0].coords)
@@ -169,7 +148,7 @@ const showStationsEuro95 = function (jsonObject) {
 
   const showStationsDiesel = function (jsonObject) {
     //Toon menu
-    // console.log("gaat het")
+   
 
     console.log(jsonObject);
     // console.log(jsonObject[0].coords)
@@ -189,23 +168,7 @@ const showStationsEuro95 = function (jsonObject) {
   };
 
 
-// const showEuro95 = function(){
-//     console.log(euro95btn.classList)
-//     const classlist = euro95btn.classList.toString()
-//     // console.log(klas)
-//     if(classlist.includes("is-pressed")){
-//         console.log("jaaa");
-//         // gastype = "euro95";
-//         // console.log(gastype)
-//         // layergroup.clearLayers();
-//         // getStations();
-//         getStationsEuro95();
 
-//     }
-//     else{
-//         console.log("nooo");
-//     }
-// }
 
 
 const maakMarker = function (coords, adres, stationNaam) {
@@ -218,7 +181,6 @@ const maakMarker = function (coords, adres, stationNaam) {
     // addTo... is hier dat we de marker toevoegen aan de eerder aangemaakte layer
     // lat=latitude of lengtegraad
 
-    // if(euro95btn.getAttribute )
     marker.bindPopup(`
     <h3 style="margin:0 auto">Name: ${stationNaam}</h3>
     <h4>${gastype}</h4>
@@ -237,7 +199,6 @@ const maakMarkerGasType = function (coords, adres, stationNaam, gastype, price) 
     // addTo... is hier dat we de marker toevoegen aan de eerder aangemaakte layer
     // lat=latitude of lengtegraad
 
-    // if(euro95btn.getAttribute )
     marker.bindPopup(`
     <h3 style="margin:0 auto">Name: ${stationNaam}</h3>
     <p style="color:black; font-size: 22px; border:1px solid black; padding:8px; border-radius: 5px;">${gastype} => €${price}</p>
@@ -290,16 +251,6 @@ const reloadPage = function() {
 
 
 
-// const addEventsToStations = function () {
-    // const stations = document.querySelectorAll('.c-station__row');
-    
-    // const coords = coordinates[0]; // this = het element waaraan je de eventlistener koppelt
-    // const adres = adresses[0]; // this = het element waaraan je de eventlistener koppelt
-    // const sationNaam = stations[0]; // this = het element waaraan je de eventlistener koppelt
-    // maakMarker(coords, adres, sationNaam);
-      
-    
-//   };
 
   const getStations = function () {
     //handleData('https://apptankstaioneindopdracht.azurewebsites.net/api/gasStations', showStations);
@@ -360,10 +311,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     reloadPage();
 
-    // document.getElementById("barFilled").style.width = "10%";
-    // const gasprice = document.querySelector(".js-gasprice");
-    // gasprice.innerHTML = `10euro`;
-    // document.getElementById("barFilled").style.backgroundColor = "green";
+
 });
 
-// dit is een test om te kijken of github werkt!
