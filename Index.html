@@ -5,383 +5,301 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>smarTank</title>
-    
-    <!-- $$$$$$$****$$$$$ HIER MOET NOG EEN LOGO KOMEN VAN HET TANKSTATION VOOR BOVENAAN IN DE BROWSER -->
-    <!-- <link rel="icon" href="./img/Group 21.svg"> -->
+
     <link rel="icon" href="./img/Pointer_for_browser.png">
 
     <link rel="stylesheet" href="css/normalize.css" />
-	<link rel="stylesheet" href="css/screen.css" />
- 
+	<link rel="stylesheet" href="css/new_screen.css" />
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    
+    <script defer src="./script/app.js"></script>
+    <script src="./script/dataHandler.js"></script>
 
 </head>
 <body>
-      <div class="c-page">
-        <div class="o-container">
-              <div class="c-header">
-                  
-                  <div class="c-header_logo">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="155.581" height="73.956" viewBox="0 0 155.581 73.956">
-                      <g id="gaspump_logo" transform="translate(-313.976 -429.738)">
-                        <g id="gaspump_logo-2" data-name="gaspump_logo" transform="translate(315.494 431.248)">
-                          <path id="Path_2" data-name="Path 2" d="M278.575,386l1.693,10.885" transform="translate(-222.714 -365.599)" fill="none" stroke="#000" stroke-width="3"/>
-                          <path id="Path_3" data-name="Path 3" d="M306.54,417.4s9.451-22.23,12.555-24.989,8.464,0,8.464,0L357.606,407.9" transform="translate(-215.095 -363.615)" fill="none" stroke="#000" stroke-width="3"/>
-                          <path id="Path_4" data-name="Path 4" d="M346.7,399.832s1.411,17.63-1.693,20.237-10.157,3.066-12.978,1.226-23.276-12.878-23.276-12.878" transform="translate(-214.491 -360.305)" fill="none" stroke="#000" stroke-width="3"/>
-                          <path id="Path_5" data-name="Path 5" d="M340.353,421.683s-10.016-16.9-11.991-18.438-8.182-2.453-12.414,0a41.21,41.21,0,0,1-7.053,3.373" transform="translate(-214.454 -359.578)" fill="none" stroke="#000" stroke-width="3"/>
-                          <g id="Group_1" data-name="Group 1" transform="translate(0)">
-                            <path id="Path_1" data-name="Path 1" d="M235.5,410.359s-.246,3.919,1.754,6.074,6.2,2.273,6.2,2.273l18.093-13.173,31.752-3.066,1.3,3.066h7.379l7.379,13.444,15.788,9.2,2.062-2.477,27.236,15.213s9.115,3.774,13.347-1.651,10.634-23.822,10.634-23.822a4.006,4.006,0,0,0,3.8-2.476c1.3-2.712,5.831-13.23,5.831-13.23.217,0-35.43-16.487-35.43-16.487a6.826,6.826,0,0,0-.524-8.081c-3.255-4.363-12.75-3.9-12.75-3.9s-26.792.986-28.854,2.755-8.518,10.849-8.518,10.849l-10.688,3.3v3.022l-31.786,3.167Z" transform="translate(-235.494 -371.248)" fill="none" stroke="#000" stroke-width="3"/>
-                            <path id="Path_13" data-name="Path 13" d="M0-.015S3.628-.527,5.627,1.472,8,7.983,8,7.983" transform="translate(0.805 39.403)" fill="none" stroke="#000" stroke-width="3"/>
-                          </g>
-                        </g>
-                        <text id="smarTank" transform="translate(422.131 451.484) rotate(24)" font-size="9" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">smarTank</tspan></text>
-                      </g>
-                    </svg> -->
-
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="155.581" height="73.956" viewBox="0 0 155.581 73.956">
-                      <g id="gaspump_logo" transform="translate(-313.976 -429.738)">
-                        <g id="gaspump_logo-2" data-name="gaspump_logo" transform="translate(315.494 431.248)">
-                          <path id="Path_2" data-name="Path 2" d="M278.575,386l1.693,10.885" transform="translate(-222.714 -365.599)" fill="none" stroke="#000" stroke-width="3"/>
-                          <path id="Path_3" data-name="Path 3" d="M306.54,417.4s9.451-22.23,12.555-24.989,8.464,0,8.464,0L357.606,407.9" transform="translate(-215.095 -363.615)" fill="none" stroke="#000" stroke-width="3"/>
-                          <path id="Path_4" data-name="Path 4" d="M346.7,399.832s1.411,17.63-1.693,20.237-10.157,3.066-12.978,1.226-23.276-12.878-23.276-12.878" transform="translate(-214.491 -360.305)" fill="none" stroke="#000" stroke-width="3"/>
-                          <path id="Path_5" data-name="Path 5" d="M340.353,421.683s-10.016-16.9-11.991-18.438-8.182-2.453-12.414,0a41.21,41.21,0,0,1-7.053,3.373" transform="translate(-214.454 -359.578)" fill="none" stroke="#000" stroke-width="3"/>
-                          <g id="Group_1" data-name="Group 1" transform="translate(0)">
-                            <path id="Path_1" data-name="Path 1" d="M235.5,410.359s-.246,3.919,1.754,6.074,6.2,2.273,6.2,2.273l18.093-13.173,31.752-3.066,1.3,3.066h7.379l7.379,13.444,15.788,9.2,2.062-2.477,27.236,15.213s9.115,3.774,13.347-1.651,10.634-23.822,10.634-23.822a4.006,4.006,0,0,0,3.8-2.476c1.3-2.712,5.831-13.23,5.831-13.23.217,0-35.43-16.487-35.43-16.487a6.826,6.826,0,0,0-.524-8.081c-3.255-4.363-12.75-3.9-12.75-3.9s-26.792.986-28.854,2.755-8.518,10.849-8.518,10.849l-10.688,3.3v3.022l-31.786,3.167Z" transform="translate(-235.494 -371.248)" fill="none" stroke="#000" stroke-width="3"/>
-                            <path id="Path_13" data-name="Path 13" d="M0-.015S3.628-.527,5.627,1.472,8,7.983,8,7.983" transform="translate(0.805 39.403)" fill="none" stroke="#000" stroke-width="3"/>
-                          </g>
-                        </g>
-                        <text id="smarTank" transform="translate(422.131 451.484) rotate(24)" font-size="9" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">smarTank</tspan></text>
-                      </g>
-                    </svg>
-                    
-                    <span class="hello">
-                      smar<span class="hello" style="color:#63C99E" >T</span>ank
-                      
-                      
-                    </span>
-                     
-                  -->
-                <div class="u-pointer c-pointer-css-anim" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="78.384" height="78.384" viewBox="0 0 78.384 78.384">
-                      <g id="Pointer_for_logo" transform="translate(0 31.574) rotate(-34)">
-                        <path id="Path_21" data-name="Path 21" d="M0,0H56.463V56.463H0Z" fill="none"/>
-                        <path id="Path_22" data-name="Path 22" d="M21.468,2A16.456,16.456,0,0,0,5,18.468C5,30.82,21.468,49.053,21.468,49.053S37.937,30.82,37.937,18.468A16.456,16.456,0,0,0,21.468,2ZM9.705,18.468a11.763,11.763,0,0,1,23.526,0c0,6.776-6.776,16.915-11.763,23.244C16.575,35.431,9.705,25.173,9.705,18.468Z" transform="translate(6.763 2.705)"/>
-                        <circle id="Ellipse_2" data-name="Ellipse 2" cx="5.882" cy="5.882" r="5.882" transform="translate(22.35 15.292)" fill="#63c99e"/>
-                      </g>
-                    </svg>
-                    
-                </div>
-
-                   <div class="u-textLogo">
-                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="228" height="94" viewBox="0 0 228 94">
-                        <defs>
-                          <filter id="smarTank" x="0" y="0" width="228" height="94" filterUnits="userSpaceOnUse">
-                            <feOffset dy="3" input="SourceAlpha"/>
-                            <feGaussianBlur stdDeviation="3" result="blur"/>
-                            <feFlood flood-opacity="0.161"/>
-                            <feComposite operator="in" in2="blur"/>
-                            <feComposite in="SourceGraphic"/>
-                          </filter>
-                        </defs>
-                        <g id="smarTank_logo" transform="translate(810 -1527)">
-                          <g transform="matrix(1, 0, 0, 1, -810, 1527)" filter="url(#smarTank)">
-                            <text id="smarTank-2" data-name="smarTank" transform="translate(9 60)" font-size="64" font-family="Praise-Regular, Praise"><tspan x="0" y="0">smar</tspan><tspan y="0" fill="#63c99e">T</tspan><tspan y="0">ank</tspan></text>
-                          </g>
-                        </g>
-                      </svg>
-                   </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                  </div>
-
+<!-- Container -->
+   <div class="o-container">
+    <!-- Header -->
+     <div class="c-header">
+            <div id="header">
+                <div class="grid_item_header_1 js-reloadPage">
                 
-                  
+                        <div class="c-header_logo">
+                            <!-- This is the pointer with animation of the logo -->
+                            <div class="u-pointer c-pointer-css-anim" >
+                                <svg class="u-pointerLogo_large" xmlns="http://www.w3.org/2000/svg" width="78.384" height="78.384" viewBox="0 0 78.384 78.384">
+                                  <g id="Pointer_for_logo" transform="translate(0 31.574) rotate(-34)">
+                                    <path id="Path_21" data-name="Path 21" d="M0,0H56.463V56.463H0Z" fill="none"/>
+                                    <path id="Path_22" data-name="Path 22" d="M21.468,2A16.456,16.456,0,0,0,5,18.468C5,30.82,21.468,49.053,21.468,49.053S37.937,30.82,37.937,18.468A16.456,16.456,0,0,0,21.468,2ZM9.705,18.468a11.763,11.763,0,0,1,23.526,0c0,6.776-6.776,16.915-11.763,23.244C16.575,35.431,9.705,25.173,9.705,18.468Z" transform="translate(6.763 2.705)"/>
+                                    <circle id="Ellipse_2" data-name="Ellipse 2" cx="5.882" cy="5.882" r="5.882" transform="translate(22.35 15.292)" fill="#63c99e"/>
+                                  </g>
+                                </svg>
 
-                  <!-- <svg class="u-gasdrop" xmlns="http://www.w3.org/2000/svg" width="21.481" height="27.977" viewBox="0 0 21.481 27.977">
-                    <g id="gas_drop_logo" transform="translate(-306.306 -474.31)">
-                      <path id="Path_9" data-name="Path 9" d="M318.273,475.491s-6.847,5.594-9.191,10.878a14.14,14.14,0,0,0-1.275,4.395c.044,1.67.251,4.6,1.5,6.42,2.18,3.211,8.452,3.606,8.452,3.606" transform="translate(0 0)" fill="none" stroke="#000" stroke-width="3"/>
-                      <path id="Path_10" data-name="Path 10" d="M307.481,476.2s5.759,4.505,8.43,10.087a13.937,13.937,0,0,1,1.366,4.614c-.05,1.764-.123,4.86-1.552,6.785a10.192,10.192,0,0,1-6.136,3.765c0,.014-1.088,0-1.088,0" transform="translate(9.008 -0.711)" fill="none" stroke="#000" stroke-width="3"/>
-                      <path id="Path_11" data-name="Path 11" d="M6.921,12.1s-.7,2.764.8,4.332a4.722,4.722,0,0,0,4.342,1.333" transform="translate(305.57 478.946)" fill="none" stroke="#63c99e" stroke-linecap="round" stroke-width="2"/>
-                    </g>
-                  </svg> -->
+                                  <svg class="u-pointerLogo_small"  xmlns="http://www.w3.org/2000/svg" width="48.862" height="48.862" viewBox="0 0 48.862 48.862">
+                                    <g id="Pointer_for_logo_small" transform="translate(0 19.682) rotate(-34)">
+                                      <path id="Path_21" data-name="Path 21" d="M0,0H35.2V35.2H0Z" fill="none"/>
+                                      <path id="Path_22" data-name="Path 22" d="M15.266,2A10.258,10.258,0,0,0,5,12.266c0,7.7,10.266,19.065,10.266,19.065S25.532,19.965,25.532,12.266A10.258,10.258,0,0,0,15.266,2ZM7.933,12.266a7.333,7.333,0,0,1,14.666,0c0,4.224-4.224,10.545-7.333,14.49C12.215,22.84,7.933,16.446,7.933,12.266Z" transform="translate(2.333 0.933)"/>
+                                      <circle id="Ellipse_2" data-name="Ellipse 2" cx="3.666" cy="3.666" r="3.666" transform="translate(13.932 9.533)" fill="#63c99e"/>
+                                    </g>
+                                  </svg>
+                                  
+                                  
+                            </div>
+                        </div>
+                        <!-- This is the text of the logo -->
+                        <div class="u-textLogo">
+                            <svg class="u-textLogo_large" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="228" height="94" viewBox="0 0 228 94">
+                             <defs>
+                               <filter id="smarTank" x="0" y="0" width="228" height="94" filterUnits="userSpaceOnUse">
+                                 <feOffset dy="3" input="SourceAlpha"/>
+                                 <feGaussianBlur stdDeviation="3" result="blur"/>
+                                 <feFlood flood-opacity="0.161"/>
+                                 <feComposite operator="in" in2="blur"/>
+                                 <feComposite in="SourceGraphic"/>
+                               </filter>
+                             </defs>
+                             <g id="smarTank_logo" transform="translate(810 -1527)">
+                               <g transform="matrix(1, 0, 0, 1, -810, 1527)" filter="url(#smarTank)">
+                                 <text id="smarTank-2" data-name="smarTank" transform="translate(9 60)" font-size="64" font-family="Praise-Regular, Praise"><tspan x="0" y="0">smar</tspan><tspan y="0" fill="#63c99e">T</tspan><tspan y="0">ank</tspan></text>
+                               </g>
+                             </g>
+                           </svg>
 
-                  <!-- <svg class="u-gasdrop c-gas-drop-css-anim" xmlns="http://www.w3.org/2000/svg" width="18.459" height="23.841" viewBox="0 0 18.459 23.841">
-                    <g id="gas_drop_logo" transform="translate(-306.306 -474.31)">
-                      <path id="Path_9" data-name="Path 9" d="M316.562,475.491s-5.728,4.679-7.688,9.1a11.829,11.829,0,0,0-1.067,3.676c.037,1.4.21,3.846,1.258,5.371,1.823,2.686,7.07,3.017,7.07,3.017" transform="translate(0)" fill="none" stroke="#000" stroke-width="3"/>
-                      <path id="Path_10" data-name="Path 10" d="M307.481,476.2s4.817,3.769,7.052,8.438a11.658,11.658,0,0,1,1.143,3.859c-.042,1.475-.1,4.065-1.3,5.676a8.526,8.526,0,0,1-5.133,3.149c0,.012-.91,0-.91,0" transform="translate(7.588 -0.711)" fill="none" stroke="#000" stroke-width="3"/>
-                      <path id="Path_11" data-name="Path 11" d="M6.895,12.1s-.582,2.312.671,3.624A3.95,3.95,0,0,0,11.2,16.839" transform="translate(305.363 475.27)" fill="none" stroke="#63c99e" stroke-linecap="round" stroke-width="2.3"/>
-                    </g>
-                  </svg> -->
-                  
-
-                  <!-- <div class="u-quote"> -->
-                    <!-- <p><i>Tank <u style="text-decoration:underline; text-decoration-color: #63C99E; ">smart</u> , save <u style="text-decoration:underline; text-decoration-color: #63C99E;">hard</u>!</i></p> -->
-                    <!-- <H1>smarTank</H1> -->
-                  <!-- </div> -->
-                  
-                  
-
-                  
-                  
-                  
-
-                      
-                     
-                 
-                 
-  
-                 
-                    
-  
-                  <!-- <div class="u-div-width">
-                      <p class="u-header-name"><i>Tank smart, save hard!</i></p>
-                  </div> -->
-  
-                  <!-- <div class="c-header__nav">
-                      <div class="c-nav">
-                         <ul class="o-list c-nav__list">
-                             <li class="c-nav__item"><a href="#!" class="c-nav__link">Contact</a></li>
-                              <li class="c-nav__item"><a href="#!" class="c-nav__link">Info</a></li>
-                         </ul>
-                      </div>
-                  </div> -->
-  
-                    <!-- <button class="o-button-reset c-hamburgerMenu js-hamburgerMenu">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-                      
-                    </button> -->
-  
-  
-                   
-                  <!-- <div class="c-mobile-nav__nav c-mobile-nav__nav--main">
-                    <nav class="c-nav">
-                        <ul class="o-list c-nav__listHam">
-                            <li class="c-nav__item"><a href="#!" class="c-nav__link">Contact</a></li>
-                            <li class="c-nav__item"><a href="#!" class="c-nav__link">Info</a></li>
-                        </ul>
-                    </nav>
-                </div>
-  
-                <div class="c-header__mobile-nav-trigger">
-                  <button class="o-button-reset c-nav-trigger js-toggle-nav">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-                  </button>
-              </div> -->
-  
-              <div class="c-header__nav">
-                <nav class="c-nav c-nav--meta">
-                    <ul class="o-list c-nav__list">
-                        <li class="c-nav__item js-contact"><a href="#contact" class="c-nav__link c-nav__link--meta"><u>Contact</u></a></li>
-                        <li class="c-nav__item"><a href="#!" class="c-nav__link c-nav__link--meta"><u>Info</u></a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="c-header__mobile-nav-trigger">
-                <button class="o-button-reset c-nav-trigger js-toggle-nav">
-                    <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </button>
-            </div>  
-                  
-              </div>
-              <hr>
-          <div class="c-main">
-            <aside class="c-side--nav">
-              <div class="u-side--nav-small">
-                <button class="u-euro95 js-euro95">
-                  <p class="u-euro95TXT">Euro 95</p>
-                  <!-- <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
-                    <g id="Group_21" data-name="Group 21" transform="translate(-1257 1433)">
-                      <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="transparent" stroke="#000" stroke-width="5">
-                        <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
-                        <ellipse cx="39.5" cy="40" rx="37" ry="37.5" fill=""/>
-                      </g>
-                      <text id="E5" transform="translate(1278 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">E10</tspan></text>
-                    </g>
-                  </svg> -->
-
-                  <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
-                    <g id="Group_22" data-name="Group 22" transform="translate(-1257 1433)">
-                      <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="transparent" stroke="#000" stroke-width="5">
-                        <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
-                        <ellipse cx="39.5" cy="40" rx="37" ry="37.5" fill="none"/>
-                      </g>
-                      <text id="E10" transform="translate(1270 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">E10</tspan></text>
-                    </g>
-                  </svg>
-                  
-                  
-                
-                  
-                  
-                </button>
-
-                <button class="u-euro98 js-euro98">
-                  <p class="u-euro98TXT" >Euro 98</p>
-                  <!-- <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
-                    <g id="Group_21" data-name="Group 21" transform="translate(-1257 1433)">
-                      <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="#fff" stroke="#000" stroke-width="3">
-                        <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
-                        <ellipse cx="39.5" cy="40" rx="38" ry="38.5" fill="none"/>
-                      </g>
-                      <text id="E10" transform="translate(1278 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">E5</tspan></text>
-                    </g>
-                  </svg> -->
-
-                  <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
-                    <g id="Group_21" data-name="Group 21" transform="translate(-1257 1433)">
-                      <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="transparent" stroke="#000" stroke-width="5">
-                        <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
-                        <ellipse cx="39.5" cy="40" rx="37" ry="37.5" fill="none"/>
-                      </g>
-                      <text id="E5" transform="translate(1278 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">E5</tspan></text>
-                    </g>
-                  </svg>
-                </button>
-
-                <button class="u-diesel js-diesel">
-                  <p class="u-dieselTXT">Diesel</p>
-
-                  <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
-                    <g id="Group_23" data-name="Group 23" transform="translate(-1257 1433)">
-                      <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="transparent" stroke="#000" stroke-width="5">
-                        <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
-                        <ellipse cx="39.5" cy="40" rx="37" ry="37.5" fill="none"/>
-                      </g>
-                      <text id="B7" transform="translate(1278 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">B7</tspan></text>
-                    </g>
-                  </svg>
-                  
-                  
-                </button>
-
-              </div>
-            </aside>
-
-            <div class="c-map" id="map">
-                <img src="./img/0_fMz62Ks_u0QvVQ1E.png" alt="">
-            </div>
-          </div>
-  
-          <div>
-              <!-- <h1>Favorites</h1> -->
-              <!-- als je op een tankstation drukt en je hebt nog geen gas aangeduid, melden dat je iets moet aanduiden. -->
-          </div>
-        </div>
-        <div id="contact" class="c-contact">
-        
-          <div class="c-footer">
-                   
-               <div class="c-item">
-                  <!-- <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg> -->
-                  <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 4.99L4 6h16zm0 12H4V8l8 5 8-5v10z"/></svg>                 <div class="u-emailtxtdiv"> 
-                   <p class="u-itemtxthead">E-mail us:</p>
-                   <p class="u-itemtxt">jelle.meyhui@student.howest.be</p>
-                </div>
-                </div>  
-        
-
-              <div class="c-item">
-                 <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-                <div class="u-emailtxtdiv"> 
-                  <p class="u-itemtxthead">Call us:</p>
-                  <p class="u-itemtxt">Tel: 04 780 008 76</p>
-               </div>
-               </div>  
-
-                <!-- <div class="c-item">
-                  <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                  <div class="u-emailtxtdiv"> 
-                  <p class="u-itemtxthead">Visit us:</p>
-                  <p class="u-itemtxt">Waregem 8790</p>
-                </div>
-                </div>   -->
-
-                
-       
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </div>
-
-     
-        <!-- <div id="contact" class="c-contact">
-        
-            <div class="c-footer">
-                     
-                 <div class="c-item">
-                    <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                          <svg class="u-textLogo_small" xmlns="http://www.w3.org/2000/svg" width="158" height="58" viewBox="0 0 158 58">
+                            <g id="smarTank_logo_small" transform="translate(802 -1550)">
+                              <text id="smarTank" transform="translate(-802 1591)" font-size="48" font-family="Praise-Regular, Praise"><tspan x="0" y="0">smar</tspan><tspan y="0" fill="#63c99e">T</tspan><tspan y="0">ank</tspan></text>
+                            </g>
+                          </svg>
+                          
+                          
+                        </div>
+                    </div>
                
-                   <div class="u-emailtxtdiv"> 
+                      
+                
+                <div class="grid_item_header_2">
+                    <div class="c-header__nav">
+                        <nav class="c-nav c-nav--meta">
+                            <ul class="o-list c-nav__list">
+                                <li class="c-nav__item js-contact"><a href="#contact" class="c-nav__link c-nav__link--meta"><u>Contact</u></a></li>
+                                <!-- <li class="c-nav__item"><a href="#!" class="c-nav__link c-nav__link--meta"><u>Info</u></a></li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="c-header__mobile-nav-trigger">
+                        <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                            <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                            </svg>
+                        </button>
+                    </div> 
+                </div>
+            </div>
+     </div>
+     <hr>
+
+     <!-- Main -->
+        <div id="main">
+        <div class="grid_item_main_1">
+            <!-- This is a checkbox for when the screen becomes to small  -->
+            <!-- <div class="c-checkbox">
+                <input type="checkbox" id="euro95" name="euro95" value="euro95">
+                <label for="euro95"> Euro 95 </label><br>
+
+                <input type="checkbox" id="euro98" name="euro98" value="euro98">
+                <label for="euro98"> Euro 98 </label><br>
+
+                <input type="checkbox" id="diesel" name="diesel" value="diesel">
+                <label for="diesel"> Diesel </label><br>
+            </div> -->
+            <!-- <div class="c-side--nav"> -->
+                <!-- <div class="u-side--nav-small"> -->
+                    <button class="u-euro95 js-euro95">
+                    <p class="u-euro95TXT">Euro 95</p>      
+                    <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
+                        <g id="Group_22" data-name="Group 22" transform="translate(-1257 1433)">
+                        <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="transparent" stroke="#000" stroke-width="5">
+                            <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
+                            <ellipse cx="39.5" cy="40" rx="37" ry="37.5" fill="none"/>
+                        </g>
+                        <text id="E10" transform="translate(1270 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">E10</tspan></text>
+                        </g>
+                    </svg>
+                    </button>
+    
+                    <button class="u-euro98 js-euro98">
+                    <p class="u-euro98TXT" >Euro 98</p>
+                    <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
+                        <g id="Group_21" data-name="Group 21" transform="translate(-1257 1433)">
+                        <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="transparent" stroke="#000" stroke-width="5">
+                            <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
+                            <ellipse cx="39.5" cy="40" rx="37" ry="37.5" fill="none"/>
+                        </g>
+                        <text id="E5" transform="translate(1278 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">E5</tspan></text>
+                        </g>
+                    </svg>
+                    </button>
+    
+                    <button class="u-diesel js-diesel">
+                    <p class="u-dieselTXT">Diesel</p>
+    
+                    <svg class="c-fuelLogo" xmlns="http://www.w3.org/2000/svg" width="79" height="80" viewBox="0 0 79 80">
+                        <g id="Group_23" data-name="Group 23" transform="translate(-1257 1433)">
+                        <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1257 -1433)" fill="transparent" stroke="#000" stroke-width="5">
+                            <ellipse cx="39.5" cy="40" rx="39.5" ry="40" stroke="none"/>
+                            <ellipse cx="39.5" cy="40" rx="37" ry="37.5" fill="none"/>
+                        </g>
+                        <text id="B7" transform="translate(1278 -1382)" font-size="36" font-family="Mukta-Medium, Mukta" font-weight="500"><tspan x="0" y="0">B7</tspan></text>
+                        </g>
+                    </svg>
+                    </button>
+                <!-- </div> -->
+                <!-- </div> -->
+        </div>
+    
+            <div class="grid_item_main_2">
+                <div class="c-map" id="map">
+                    <!-- <img src="./img/0_fMz62Ks_u0QvVQ1E.png" alt=""> -->
+                </div>
+                </div>
+            </div>
+
+        <hr>
+      
+            <div class="u-chart">
+                <div class="center">
+                    <h1 class="u-chartTitle">Average gas prices</h1>
+                    <div class="pricesBox">
+                        <p>Shell</p>
+                        <p class="js-gaspriceShell">100euro</p>
+                        <div class="price">
+                            <div class="barFilled" id="barFilledShell">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricesBox">
+                        <p>Esso</p>
+                        <p class="js-gaspriceEsso">100euro</p>
+                        <div class="price">
+                            <div class="barFilled" id="barFilledEsso">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricesBox">
+                        <p>Q8</p>
+                        <p class="js-gaspriceQ8">100euro</p>
+                        <div class="price">
+                            <div class="barFilled" id="barFilledQ8">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    
+
+        <!-- Table -->
+
+       <!-- <div id="table">
+         <div class="grid_item_table_1">
+                <table>
+                    <caption>Favorites</caption>
+                    <tr>
+                        <th class="th_width_station">Station</th>
+                        <th class="th_width_province">Province</th>
+                        <th class="th_width_country">Country</th>
+                    </tr>
+                    <tr>
+                        <td>Texaco </td>
+                        <td>West-vlaanderen</td>
+                        <td>Belgium</td>
+                      </tr>
+                      <tr>
+                        <td>Shell</td>
+                        <td>West-Vlaanderen</td>
+                        <td>Oeselegem</td>
+                      </tr>
+                </table>
+         </div>
+        </div> -->
+
+        <!-- zet de pijl in een ander kleur als hij geliked is!   -->
+
+
+        </div>
+
+        <!-- <div>
+            Card with prices per province.
+        </div> -->
+
+        
+
+            <!-- Footer -->
+
+    <div id="contact" class="c-contact">
+        <div id="footer">
+            <div class="grid_item_footer_1">
+                <div class="c-item">
+                    <!-- <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg> -->
+                    <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 4.99L4 6h16zm0 12H4V8l8 5 8-5v10z"/></svg>                 <div class="u-emailtxtdiv"> 
                      <p class="u-itemtxthead">E-mail us:</p>
                      <p class="u-itemtxt">jelle.meyhui@student.howest.be</p>
                   </div>
                   </div>  
-          
-
-                <div class="c-item">
-                   <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-                  <div class="u-emailtxtdiv"> 
-                    <p class="u-itemtxthead">Call us:</p>
-                    <p class="u-itemtxt">Tel: 04 780 008 76</p>
-                 </div>
-                 </div>  
-
-                 <div class="c-item">
-                  <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                  <div class="u-emailtxtdiv"> 
-                   <p class="u-itemtxthead">Visit us:</p>
-                   <p class="u-itemtxt">Waregem 8790</p>
-                </div>
-                </div>  
-         
-
-              </div>
             </div>
-          </div>
-        </div> -->
-
-        voorzie een darkmodeeeee!!!
-        verplicht met grid te werken.
-
-        
-        
-     
-
     
-
-      <aside class="c-mobile-nav">
-        <div class="c-mobile-nav__bg"></div>
-        <div class="c-mobile-nav__body">
-            <div class="c-mobile-nav__header">
-                <button class="o-button-reset c-nav-trigger js-toggle-nav">
-                    <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="c-mobile-nav__nav c-mobile-nav__nav--main">
-                <nav class="c-nav">
-                    <ul class="o-list c-nav__list">
-                        <li class="c-nav__item"><a href="#!" class="c-nav__link">Contact</a></li>
-                        <li class="c-nav__item"><a href="#!" class="c-nav__link">Info</a></li>
-                    </ul>
-                </nav>
+            <div class="grid_item_footer_2">
+                <div class="c-item">
+                    <svg class="u-itemsvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                   <div class="u-emailtxtdiv"> 
+                     <p class="u-itemtxthead">Call us:</p>
+                     <p class="u-itemtxt">Tel: 04 780 008 76</p>
+                  </div>
+                  </div>  
             </div>
         </div>
-    </aside>
+    </div>
+
+    Werk je nog even info af aub???
+    ++++ als je nog op het logo drukt dat hij naar de pagina gaat! doe dit via js!!!
+    ook checkboxes mooier maken!
+    Toon een kaart met duurste en minder dure tankstations, zie messenger voor meer uitleg.
+
+    <h1>alles moet in em en niet in px en margin ook !!!!!!!</h1>
+
+
+    <!-- This is the side navigation for when the screen becomes to small -->
+        <aside class="c-mobile-nav">
+            <div class="c-mobile-nav__bg"></div>
+            <div class="c-mobile-nav__body">
+                <div class="c-mobile-nav__header">
+                    <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                        <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="c-mobile-nav__nav c-mobile-nav__nav--main">
+                    <nav class="c-nav">
+                        <ul class="o-list c-nav__list">
+                            <li class="c-nav__item"><a href="#contact" class="c-nav__link">Contact</a></li>
+                            <!-- <li class="c-nav__item"><a href="#!" class="c-nav__link">Info</a></li> -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+   
 </body>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script> -->
 
-<script src="./script/app.js"></script>
 </html>

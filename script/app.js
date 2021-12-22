@@ -138,7 +138,7 @@ const showStationsEuro95 = function (jsonObject) {
         const adres = station.adres; // this = het element waaraan je de eventlistener koppelt
         const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
         const gastype = station.gastype;
-        const price = station.price;
+        const price = station.price.toFixed(3);
         maakMarkerGasType(coords, adres, stationNaam, gastype, price);
     }
     
@@ -160,7 +160,7 @@ const showStationsEuro95 = function (jsonObject) {
         const adres = station.adres; // this = het element waaraan je de eventlistener koppelt
         const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
         const gastype = station.gastype;
-        const price = station.price;
+        const price = station.price.toFixed(3);
         maakMarkerGasType(coords, adres, stationNaam, gastype, price);
     }
     
@@ -181,7 +181,7 @@ const showStationsEuro95 = function (jsonObject) {
         const adres = station.adres; // this = het element waaraan je de eventlistener koppelt
         const stationNaam = station.naam; // this = het element waaraan je de eventlistener koppelt
         const gastype = station.gastype;
-        const price = station.price;
+        const price = station.price.toFixed(3);
         maakMarkerGasType(coords, adres, stationNaam, gastype, price);
     }
     
@@ -247,6 +247,48 @@ const maakMarkerGasType = function (coords, adres, stationNaam, gastype, price) 
 
 
 
+const ChangeAverageGraphShell = function (jsonObject) {
+  console.log("alo");
+  console.log(jsonObject.avg.toFixed(3));
+  // console.log(jsonObject);   
+  const gasprice = document.querySelector(".js-gaspriceShell");
+  gasprice.innerHTML = `${jsonObject.avg.toFixed(3)} euro`;
+  const procent = (jsonObject.avg/2)*100;
+  console.log(procent);
+  document.getElementById("barFilledShell").style.width = `${procent}%`;
+}
+
+const ChangeAverageGraphEsso = function (jsonObject) {
+  console.log("alo");
+  console.log(jsonObject.avg.toFixed(3));
+  // console.log(jsonObject);   
+  const gasprice = document.querySelector(".js-gaspriceShell");
+  gasprice.innerHTML = `${jsonObject.avg.toFixed(3)} euro`;
+  const procent = (jsonObject.avg/2)*100;
+  console.log(procent);
+  document.getElementById("barFilledEsso").style.width = `${procent}%`;
+}
+
+const ChangeAverageGraphQ8 = function (jsonObject) {
+  console.log("alo");
+  console.log(jsonObject.avg.toFixed(3));
+  // console.log(jsonObject);   
+  const gasprice = document.querySelector(".js-gaspriceShell");
+  gasprice.innerHTML = `${jsonObject.avg.toFixed(3)} euro`;
+  const procent = (jsonObject.avg/2)*100;
+  console.log(procent);
+  document.getElementById("barFilledQ8").style.width = `${procent}%`;
+}
+
+const reloadPage = function() {
+  const button = document.querySelector('.js-reloadPage');
+  button.addEventListener('click', function(){
+      window.location.replace("index.html")
+  })
+}
+
+
+
 
 // const addEventsToStations = function () {
     // const stations = document.querySelectorAll('.c-station__row');
@@ -283,6 +325,18 @@ const maakMarkerGasType = function (coords, adres, stationNaam, gastype, price) 
     handleData('https://testfortankstations.azurewebsites.net/api/gasStations/diesel', showStationsDiesel);
   };
 
+  const getAverageShell = function (){
+    handleData('https://testfortankstations.azurewebsites.net/api/AverageGasPrice/shell', ChangeAverageGraphShell)
+  }
+
+  const getAverageEsso = function (){
+    handleData('https://testfortankstations.azurewebsites.net/api/AverageGasPrice/shell', ChangeAverageGraphEsso)
+  }
+
+  const getAverageQ8 = function (){
+    handleData('https://testfortankstations.azurewebsites.net/api/AverageGasPrice/shell', ChangeAverageGraphQ8)
+  }
+
 document.addEventListener('DOMContentLoaded', function() {
 	console.log('DOM ingeladen!')
     
@@ -299,10 +353,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     listenToSideNav();
     getStations();
+    console.log("hier zijn we")
+    getAverageShell();
+    getAverageEsso();
+    getAverageQ8();
 
-    document.getElementById("barFilled").style.width = "10%";
-    const gasprice = document.querySelector(".js-gasprice");
-    gasprice.innerHTML = `10euro`;
+    reloadPage();
+
+    // document.getElementById("barFilled").style.width = "10%";
+    // const gasprice = document.querySelector(".js-gasprice");
+    // gasprice.innerHTML = `10euro`;
     // document.getElementById("barFilled").style.backgroundColor = "green";
 });
 
