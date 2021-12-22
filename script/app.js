@@ -262,7 +262,7 @@ const ChangeAverageGraphEsso = function (jsonObject) {
   console.log("alo");
   console.log(jsonObject.avg.toFixed(3));
   // console.log(jsonObject);   
-  const gasprice = document.querySelector(".js-gaspriceShell");
+  const gasprice = document.querySelector(".js-gaspriceEsso");
   gasprice.innerHTML = `${jsonObject.avg.toFixed(3)} euro`;
   const procent = (jsonObject.avg/2)*100;
   console.log(procent);
@@ -273,7 +273,7 @@ const ChangeAverageGraphQ8 = function (jsonObject) {
   console.log("alo");
   console.log(jsonObject.avg.toFixed(3));
   // console.log(jsonObject);   
-  const gasprice = document.querySelector(".js-gaspriceShell");
+  const gasprice = document.querySelector(".js-gaspriceQ8");
   gasprice.innerHTML = `${jsonObject.avg.toFixed(3)} euro`;
   const procent = (jsonObject.avg/2)*100;
   console.log(procent);
@@ -330,11 +330,11 @@ const reloadPage = function() {
   }
 
   const getAverageEsso = function (){
-    handleData('https://testfortankstations.azurewebsites.net/api/AverageGasPrice/shell', ChangeAverageGraphEsso)
+    handleData('https://testfortankstations.azurewebsites.net/api/AverageGasPrice/Esso', ChangeAverageGraphEsso)
   }
 
   const getAverageQ8 = function (){
-    handleData('https://testfortankstations.azurewebsites.net/api/AverageGasPrice/shell', ChangeAverageGraphQ8)
+    handleData('https://testfortankstations.azurewebsites.net/api/AverageGasPrice/Q8', ChangeAverageGraphQ8)
   }
 
 document.addEventListener('DOMContentLoaded', function() {
