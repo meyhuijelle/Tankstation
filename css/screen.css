@@ -1025,6 +1025,8 @@ transform: TranslateX(50%);
 
 .u-chartTitle{
     margin-top: var(--global-whitespace-md);
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .pricesBox{
@@ -1461,6 +1463,11 @@ transform: TranslateX(50%);
 
 
 @media (max-width:31.25rem){
+
+    .u-chartTitle{
+        font-size: 1.5rem;
+    }
+
     .c-map{
         height: 350px;
         width: 300px;
@@ -1517,6 +1524,11 @@ transform: TranslateX(50%);
 }
 
 @media (max-width:25rem){
+
+    .u-chartTitle{
+        font-size: 1.2rem;
+    }
+
     .c-map{
         height: 300px;
         width: 275px;
@@ -1555,6 +1567,8 @@ transform: TranslateX(50%);
 }
 
 @media (max-width:21.875rem){
+
+    
     .c-map{
         height: 300px;
         width: 225px;
